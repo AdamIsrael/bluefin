@@ -115,7 +115,8 @@
 				"udica",
 				"virt-manager",
 				"virt-viewer",
-				"waybar"
+				"waybar",
+                "wofi"
 			]
 		},
 		"exclude": {
