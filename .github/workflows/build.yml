@@ -31,9 +31,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # For my purposes, I only want the framework image
+        # The framework image is going away as of 40
         # image_flavor: [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
-        image_flavor: [framework]
+        image_flavor: [main]
         # base_name: [bluefin, bluefin-dx]
         base_name: [bluefin-dx]
         # major_version: [38, 39, 40]
