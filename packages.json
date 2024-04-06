@@ -49,7 +49,7 @@
 				"wireguard-tools",
 				"xprop",
 				"yaru-theme",
-				"wl-clipboard", 
+				"wl-clipboard",
 				"zsh"
 			],
 			"bluefin-dx": [
@@ -67,6 +67,7 @@
 				"containerd.io",
 				"dbus-x11",
 				"devpod",
+				"dmenu",
 				"docker-ce",
 				"docker-ce-cli",
 				"docker-buildx-plugin",
@@ -75,6 +76,7 @@
 				"genisoimage",
 				"google-droid-sans-mono-fonts",
 				"google-go-mono-fonts",
+				"grimshot",
 				"ibm-plex-mono-fonts",
 				"incus",
 				"incus-agent",
@@ -104,10 +106,15 @@
 				"qemu",
 				"rocm-hip",
 				"rocm-opencl",
+				"sway",
+				"swaybg",
+				"swayidle",
+				"swaylock",
 				"ubuntu-family-fonts",
 				"udica",
 				"virt-manager",
-				"virt-viewer"
+				"virt-viewer",
+				"waybar"
 			]
 		},
 		"exclude": {
