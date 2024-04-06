@@ -169,7 +169,7 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=An interpretation of the Ubuntu spirit built on Fedora technology 
+            org.opencontainers.image.description=An interpretation of the Ubuntu spirit built on Fedora technology
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/bluefin/bluefin/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
 
@@ -261,11 +261,14 @@ jobs:
         shell: bash
         run: exit 0
 
-  build_iso:
-    name: build iso
-    needs: [check]
-    if: github.ref_name == 'testing'
-    # Eventually would be nice for building images in PRs
-    #if: ${{ endsWith(github.event.pull_request.title, '[ISO]') }}
-    uses: ./.github/workflows/build_iso.yml
-    secrets: inherit
+# To fix this: The nested job 'build-iso' is requesting 'packages: write, id-token: write',
+# but is only allowed 'packages: read, id-token: none'.
+
+  # build_iso:
+  #   name: build iso
+  #   needs: [check]
+  #   if: github.ref_name == 'testing'
+  #   # Eventually would be nice for building images in PRs
+  #   #if: ${{ endsWith(github.event.pull_request.title, '[ISO]') }}
+  #   uses: ./.github/workflows/build_iso.yml
+  #   secrets: inherit
