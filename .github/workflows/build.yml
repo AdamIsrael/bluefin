@@ -31,14 +31,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
-        base_name: [bluefin, bluefin-dx]
-        major_version: [38, 39, 40]
+        # For my purposes, I only want the framework image
+        # image_flavor: [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
+        image_flavor: [framework]
+        # base_name: [bluefin, bluefin-dx]
+        base_name: [bluefin-dx]
+        # major_version: [38, 39, 40]
+        major_version: [39, 40]
         include:
-          - major_version: 38
-            is_latest_version: false
-            is_stable_version: true
-            is_gts_version: true
+          # - major_version: 38
+          #   is_latest_version: false
+          #   is_stable_version: true
+          #   is_gts_version: true
           - major_version: 39
             is_latest_version: true
             is_stable_version: true
@@ -47,15 +51,15 @@ jobs:
             is_latest_version: false
             is_stable_version: false
             is_gts_version: false
-        exclude:
-          - major_version: 38
-            image_flavor: asus
-          - major_version: 38
-            image_flavor: asus-nvidia
-          - major_version: 38
-            image_flavor: surface
-          - major_version: 38
-            image_flavor: surface-nvidia
+        # exclude:
+        #   - major_version: 38
+        #     image_flavor: asus
+        #   - major_version: 38
+        #     image_flavor: asus-nvidia
+        #   - major_version: 38
+        #     image_flavor: surface
+        #   - major_version: 38
+        #     image_flavor: surface-nvidia
 
     steps:
       - name: Checkout
